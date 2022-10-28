@@ -1,0 +1,12 @@
+{
+    "require": {
+        "fakerphp/faker": "^1.00",
+        "xylis/faker-cinema-providers": "^2.0",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+             "App\\": "app/"       
+        }
+    }
+}
