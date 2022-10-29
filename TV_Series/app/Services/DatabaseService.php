@@ -8,9 +8,6 @@ use App\Models\TVSeriesIntervals;
 
 class DatabaseService
 {
-    private static $servername = "localhost";
-    private static $username = "root";
-    private static $password = "0000";
     private static $conn;
     private static $script;
 
@@ -22,7 +19,7 @@ class DatabaseService
     private static function createConnection()
     {
         // Create connection
-        $conn = new \mysqli(self::$servername, self::$username, self::$password);
+        $conn = new \mysqli($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
 
         // Check connection
         if ($conn->connect_error) {

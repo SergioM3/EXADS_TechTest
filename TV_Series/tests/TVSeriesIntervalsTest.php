@@ -34,5 +34,3 @@ class TVSeriesIntervalsTest extends TestCase
         $this->assertEquals($this->tvSeriesInterval->getShowTime(), "17:32:00");
     }
 }
-
-?>

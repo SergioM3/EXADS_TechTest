@@ -2,7 +2,8 @@
     "require": {
         "fakerphp/faker": "^1.00",
         "xylis/faker-cinema-providers": "^2.0",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "vlucas/phpdotenv": "^5.5"
     },
     "autoload": {
         "psr-4": {
