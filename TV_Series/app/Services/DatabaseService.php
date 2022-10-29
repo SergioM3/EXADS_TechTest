@@ -19,7 +19,7 @@ class DatabaseService
      *
      * @return mysqli
      */
-    private static function CreateConnection()
+    private static function createConnection()
     {
         // Create connection
         $conn = new \mysqli(self::$servername, self::$username, self::$password);
@@ -37,7 +37,7 @@ class DatabaseService
      *
      * @return string
      */
-    private static function CreateDatabase()
+    private static function createDatabase()
     {
         $conn = self::$conn;
 
@@ -75,7 +75,8 @@ class DatabaseService
                     id_tv_series INT NOT NULL,
                     weekday int NOT NULL,
                     show_time time NOT NULL,
-                    CONSTRAINT fk_tv_series foreign key (id_tv_series) references exadsTechTest.tv_series(id) ON DELETE CASCADE
+                    CONSTRAINT fk_tv_series foreign key (id_tv_series) 
+                    references exadsTechTest.tv_series(id) ON DELETE CASCADE
                 );";
 
 
@@ -95,7 +96,7 @@ class DatabaseService
      * @param  int $nShowings
      * @return string
      */
-    private static function PopulateDatabase($nTvShows, $nShowings)
+    private static function populateDatabase($nTvShows, $nShowings)
     {
         $conn = self::$conn;
 
@@ -144,7 +145,7 @@ class DatabaseService
      *
      * @return void
      */
-    public static function GenerateDatabase($printScript = false, $nTvShows = 10, $nShowings = 10)
+    public static function generateDatabase($printScript = false, $nTvShows = 10, $nShowings = 10)
     {
         self::$conn = self::CreateConnection();
         self::$script = self::CreateDatabase();
@@ -159,7 +160,7 @@ class DatabaseService
      *
      * @return TVSeriesIntervals[]
      */
-    public static function GetGrid()
+    public static function getGrid()
     {
         $conn = self::$conn;
 

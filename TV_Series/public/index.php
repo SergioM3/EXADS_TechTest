@@ -8,7 +8,7 @@ use App\Services\DatabaseService;
 $viewScript = false;
 $filterDate = null;
 $filterTVShow = null;
-$viewDebugList = false;
+$viewDebugList = true;
 $useDatabase = true;
 
 /**
