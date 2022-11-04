@@ -62,9 +62,6 @@ if (isset($nextShow)) {
         echo '<td><b>TV Show   : </b></td><td><b style="color:red">' . $nextShow->getTvSeries()->getTitle() . "</b></td>";
      echo '</tr>';
      echo '<tr>';
-        echo '<td><b>Weekday   : </b></td><td><b style="color:red">' . $nextShow->getWeekDay() . "</b></td>";
-     echo '</tr>';
-     echo '<tr>';
         echo '<td><b>Weekday   : </b></td><td><b style="color:red">' . date('l', strtotime("Sunday +" . $nextShow->getWeekDay() . " days")) . "</b></td>";
      echo '</tr>';
      echo '<tr>';
@@ -85,6 +82,7 @@ if ($viewDebugList) {
          echo $airTimes[$i]->getTvSeries()->getTitle() . " | " .
          $airTimes[$i]->getTvSeries()->getChannel() . " | " .
          $airTimes[$i]->getWeekDay() . " | " .
+         date('l', strtotime("Sunday +" . $airTimes[$i]->getWeekDay() . " days")) . " | " .
          $airTimes[$i]->getShowTime() . '</b><br>';
     }
 }
