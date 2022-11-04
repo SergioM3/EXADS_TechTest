@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://media-exp1.licdn.com/dms/image/C4D1BAQG2FLIXvKlHXQ/company-background_10000/0/1610972636996?e=1668189600&v=beta&t=U-Veb2PvgN1rpYBesvPid8q7PB7tbyV0B5CDxZms0HY" width="400" alt="EXADS Logo"></a></p>
+<p align="center"><img src="https://www.exads.com/images/brand/card.png" width="200" alt="EXADS Logo"></p>
 
 
 ## About This Repository
