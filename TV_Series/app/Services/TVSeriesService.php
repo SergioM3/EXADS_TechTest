@@ -19,13 +19,13 @@ class TVSeriesService
     public static function getNextShow($airTimes, $fromDateTime = null, $filterTitle = null)
     {
 
-        $lastTime = date("Y-m-d 23:59:59", strtotime('sunday next week')); // Needs to be initialized with any date bigger then this week
+        $lastTime = strtotime(date("Y-m-d 23:59:59", strtotime('sunday next week'))); // Needs to be initialized with any date bigger then this week
         $nextShow = null;
-
 
         if (!isset($fromDateTime)) {
             $fromDateTime = date("Y-m-d H:i:s");
         }
+
         $fromDateTime = strtotime($fromDateTime); // Convert input date to time
 
         // Iterate through "airTimes" Array
@@ -38,8 +38,8 @@ class TVSeriesService
             /**
              * Date Time the show airs this week
              */
-            $showDateTime = strtotime(date("Y-m-d", strtotime('+' . $weekDay . ' day', strtotime('sunday last week'))) . " " . $showTime);
-
+            $dayofweek = date('w', $fromDateTime);
+            $showDateTime    = strtotime(date('Y-m-d', strtotime((($airTimes[$i]->getWeekDay()) - $dayofweek) . ' day', $fromDateTime))  . " " . $showTime);
 
             // Filter every "showing" ahead of filtered Datetime and by show title if it's set
             if ($showDateTime >= $fromDateTime && $showDateTime < $lastTime && (!isset($filterTitle) || $filterTitle == $title)) {

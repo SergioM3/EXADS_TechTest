@@ -20,16 +20,16 @@ class TVSeriesServiceTest extends TestCase
         $airTimes          = array();
 
         $tvSeries          = $tvSeriesFactory->create(1, "Dexter", "Netflix", "male");
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+1 hour'))));
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+2 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+1 hour')), date("H:i:s", strtotime('+1 hour'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+2 hours')), date("H:i:s", strtotime('+2 hours'))));
 
         $tvSeries          = $tvSeriesFactory->create(2, "Supernatural", "Amazon", "male");
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+3 hours'))));
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+4 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+3 hours')), date("H:i:s", strtotime('+3 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+4 hours')), date("H:i:s", strtotime('+4 hours'))));
 
         $tvSeries          = $tvSeriesFactory->create(3, "Game of Thrones", "HBO", "female");
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+5 hours'))));
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+6 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+5 hours')), date("H:i:s", strtotime('+5 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+6 hours')), date("H:i:s", strtotime('+6 hours'))));
 
         array_push($this->testGrids, $airTimes);
 
@@ -37,16 +37,16 @@ class TVSeriesServiceTest extends TestCase
         $airTimes          = array();
 
         $tvSeries          = $tvSeriesFactory->create(1, "Twin Peaks", "The CW", "male");
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('-1 hours'))));
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('-2 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('-1 hours')), date("H:i:s", strtotime('-1 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('-2 hours')), date("H:i:s", strtotime('-2 hours'))));
 
         $tvSeries          = $tvSeriesFactory->create(2, "Mr. Robot", "AMC", "male");
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+1 hour'))));
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+2 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+1 hour')), date("H:i:s", strtotime('+1 hour'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+2 hours')), date("H:i:s", strtotime('+2 hours'))));
 
         $tvSeries          = $tvSeriesFactory->create(3, "Sons of Anarchy", "ABC", "female");
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+3 hours'))));
-        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w"), date("H:i:s", strtotime('+4 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+3 hours')), date("H:i:s", strtotime('+3 hours'))));
+        array_push($airTimes, new TVSeriesIntervals($tvSeries, date("w", strtotime('+4 hours')), date("H:i:s", strtotime('+4 hours'))));
 
         array_push($this->testGrids, $airTimes);
     }

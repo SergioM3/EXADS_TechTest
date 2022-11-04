@@ -57,10 +57,24 @@ if ($useDatabase) {
 $nextShow = TVSeriesService::GetNextShow($airTimes, $filterDate, $filterTVShow);
 echo 'Next TV Show : <br>';
 if (isset($nextShow)) {
-     echo '<b style="color:red">' . $nextShow->getTvSeries()->getTitle() . " | " .
-                              $nextShow->getTvSeries()->getChannel() . " | " .
-                              $nextShow->getWeekDay() . " | " .
-                              $nextShow->getShowTime() . '</b><br><br>';
+     echo '<table>';
+     echo '<tr>';
+        echo '<td><b>TV Show   : </b></td><td><b style="color:red">' . $nextShow->getTvSeries()->getTitle() . "</b></td>";
+     echo '</tr>';
+     echo '<tr>';
+        echo '<td><b>Weekday   : </b></td><td><b style="color:red">' . $nextShow->getWeekDay() . "</b></td>";
+     echo '</tr>';
+     echo '<tr>';
+        echo '<td><b>Weekday   : </b></td><td><b style="color:red">' . date('l', strtotime("Sunday +" . $nextShow->getWeekDay() . " days")) . "</b></td>";
+     echo '</tr>';
+     echo '<tr>';
+        echo '<td><b>Channel   : </b></td><td><b style="color:red">' . $nextShow->getTvSeries()->getChannel() . "</b></td>";
+     echo '</tr>';
+     echo '<tr>';
+        echo '<td><b>Show Time : </b></td><td><b style="color:red">' . $nextShow->getShowTime() . "</b></td>";
+     echo '</tr>';
+     echo '<tr>';
+     echo '</table>';
 } else {
     echo "No TV Series Airing Found<br><br>";
 }
